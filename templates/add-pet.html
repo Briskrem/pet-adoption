@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+
+<div class="container">
+    <h1 class="text-primary">ADDING PET</h1>
+    <form action="/add-pet" method="POST" >
+        {{form.hidden_tag()}}
+        {% for field in form if field.widget.input_type != 'hidden' %}
+        
+        <div class="form-group">
+            {{field.label((form.field1))}}
+            
+            {{field(class_="form-control")}}
+        </div>
+           
+        
+        {% endfor %}
+        <button class="btn btn-primary">ADD</button>
+    </form>
+</div>
+
+
+{% endblock %}

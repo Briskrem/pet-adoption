@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+
+    {% block content %}
+
+    <h1>Hello and Welcome to the pet adoption agency</h1>
+    <h2>h</h2>
+    <a href="/add-pet" class="p-1 mb-5 text-right link-success bg-info">ADD PET</a>
+
+    <ul class='list-group list-group-horizontal'>
+    {% for pet in pets %}
+    <a href="/view-details/{{pet.id}}">
+        <li class="list-group-item">
+            <div class=" h3 font-weight-bold text-primary text-right">
+                {{pet.name}}
+            </div>       
+            <div>
+                <img src="{{pet.photo_url}}" alt="" width="150px" height="150px">
+            </div>
+            <div class="h4 ">
+                <p>Available: {{pet.available}} </p>
+            </div>   
+        </li>
+    </a>
+   
+       
+
+    {% endfor %}
+    </ul>
+
+    {% endblock %}
+    
+

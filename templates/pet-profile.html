@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <div class="container-fluid d-flex justify-content-center" style="border:2px solid #8d6f6f; max-width:400px ">
+        <div>
+            <div>
+                {{pet.name}}
+            </div>
+            <div>
+                <img src="{{pet.photo_url}}" alt="" width="150px" height="150px">
+            </div>
+            <div>
+                {{pet.species}}
+            </div>
+            <div>
+                {{pet.age}}
+            </div>
+            <div>
+                {{pet.notes}}
+            </div>
+            <div>
+                {{pet.avalable}}
+            </div>
+            
+            <a href="/edit-pet/{{pet.id}}">EDIT</a>
+        </div>
+
+        </div>
+
+
+
+
+
+{% endblock %}

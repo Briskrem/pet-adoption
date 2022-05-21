@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container-fluid d-flex justify-content-center" style="border:2px solid #8d6f6f; max-width:600px ">
+    <form action="/edit-pet/{{pet.id}}" method="POST">
+        {{form.hidden_tag()}}
+            {% for field in form if field.widget.input_type != 'hidden' %}          
+                {{field.label}}               
+                {{field(class_="form-control")}}                                
+            {% endfor %}
+            <button>SUBMIT</button>
+    </form>
+</div>
+
+
+{% endblock %}
